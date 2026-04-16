@@ -58,6 +58,16 @@ export const entities: Entity[] = [
         image: '/miso-pic.png',
     },
     {
+        id: 'tsuki',
+        number: '06',
+        name: 'Tsuki',
+        role: 'The Constant',
+        skulkTie: 'Luna',
+        image: '/luna-pic.png',
+        reclamationId: 'the-steady-flame',
+        pullquote: 'The point was never to appear like magic. The point was to stay.',
+    },
+    {
         id: 'unnamed',
         number: '???',
         name: '???',
