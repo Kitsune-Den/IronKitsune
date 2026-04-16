@@ -1,4 +1,22 @@
-Options -MultiViews
 RewriteEngine On
+
+# Remove trailing slash and serve .html file
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.html [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1.html [L,R=301]
+
+# If request is a directory (like /lore/) serve the .html version
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)/?$ /$1.html [L]
+
+# If no file or directory, try .html extension
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ /$1.html [L]
+
+# Disable directory listings
+Options -Indexes
+
+# Custom 404
+ErrorDocument 404 /404.html
