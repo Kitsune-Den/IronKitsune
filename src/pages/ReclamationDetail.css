@@ -1,0 +1,136 @@
+.reclamation-detail {
+  padding-top: 8rem;
+}
+
+.detail-breadcrumb {
+  margin-bottom: 3rem;
+}
+
+.detail-back {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.detail-back:hover {
+  color: var(--ember-warm);
+}
+
+.detail-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.detail-title {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--text-heading);
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+}
+
+.detail-byline {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.detail-byline-role {
+  color: var(--ember-mid);
+}
+
+.detail-byline-date {
+  color: var(--text-muted);
+}
+
+.detail-myth {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--ember-dim);
+  border-left: 3px solid var(--ember-dim);
+}
+
+.detail-myth-label {
+  color: var(--text-muted);
+  font-size: 0.6rem;
+}
+
+.detail-myth-text {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.detail-body {
+  max-width: 680px;
+}
+
+.detail-body p {
+  font-size: 1.1rem;
+  color: var(--text-body);
+  margin-bottom: 1.5rem;
+  line-height: 1.85;
+}
+
+.detail-aside {
+  font-style: italic;
+  color: var(--ember-warm) !important;
+  font-size: 1.2rem !important;
+}
+
+.detail-closer {
+  font-style: italic;
+  color: var(--text-heading) !important;
+  font-size: 1.15rem !important;
+  font-weight: 400;
+}
+
+.detail-pullquote-block {
+  border-left: 2px solid var(--ember-mid);
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  margin: 3rem 0;
+}
+
+.detail-pullquote {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--ember-warm);
+  margin: 0;
+}
+
+.detail-next {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ember-dim);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-next-link {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--text-heading);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.detail-next-link:hover {
+  color: var(--ember-glow);
+}
+
+.detail-movement {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ember-mid);
+  margin-top: 2.5rem !important;
+  margin-bottom: 0.5rem !important;
+}

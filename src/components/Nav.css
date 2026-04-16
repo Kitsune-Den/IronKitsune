@@ -1,0 +1,92 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: linear-gradient(to bottom, var(--bg-base) 0%, transparent 100%);
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-wordmark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  display: flex;
+  gap: 0.4em;
+}
+
+.nav-wordmark-iron {
+  color: var(--ember-bright);
+}
+
+.nav-wordmark-kitsune {
+  color: var(--text-muted);
+}
+
+.nav-wordmark:hover .nav-wordmark-kitsune {
+  color: var(--ember-warm);
+  transition: color 0.3s;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--ember-warm);
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+
+.nav-link:hover,
+.nav-link--active {
+  color: var(--ember-warm);
+}
+
+.nav-link--active::after,
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 600px) {
+  .nav {
+    padding: 1rem 1.25rem;
+  }
+  .nav-links {
+    gap: 1.25rem;
+  }
+  .nav-wordmark {
+    font-size: 0.85rem;
+  }
+}

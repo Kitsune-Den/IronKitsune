@@ -1,0 +1,191 @@
+.entities {
+    padding-top: 8rem;
+}
+
+.entities-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.entities-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    color: var(--text-heading);
+    letter-spacing: 0.08em;
+}
+
+.entities-subtitle {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    max-width: 560px;
+    margin: 0;
+}
+
+.entities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--ember-dim);
+    border: 1px solid var(--ember-dim);
+}
+
+.entity-card {
+    background: var(--bg-surface);
+    display: flex;
+    flex-direction: column;
+    transition: background 0.2s;
+}
+
+.entity-card:hover {
+    background: var(--bg-raised);
+}
+
+.entity-card--unnamed {
+    background: var(--bg-base);
+}
+
+.entity-card--unnamed:hover {
+    background: var(--bg-surface);
+}
+
+.entity-image-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+
+.entity-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: brightness(0.85) contrast(1.05);
+    transition: filter 0.3s, transform 0.4s;
+}
+
+.entity-card:hover .entity-image {
+    filter: brightness(0.95) contrast(1.05);
+    transform: scale(1.03);
+}
+
+.entity-card--unnamed .entity-image {
+    filter: brightness(0.7) saturate(0.6);
+}
+
+.entity-card--unnamed:hover .entity-image {
+    filter: brightness(0.85) saturate(0.8);
+}
+
+.entity-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, var(--bg-surface) 100%);
+}
+
+.entity-card--unnamed .entity-image-overlay {
+    background: linear-gradient(to bottom, transparent 50%, var(--bg-base) 100%);
+}
+
+.entity-info {
+    padding: 1.25rem 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.entity-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.entity-number {
+    color: var(--ember-mid);
+    font-size: 0.6rem;
+}
+
+.entity-skulk {
+    color: var(--text-muted);
+    font-size: 0.6rem;
+}
+
+.entity-name {
+    font-size: 1.4rem;
+    color: var(--text-heading);
+    letter-spacing: 0.06em;
+    margin-top: 0.25rem;
+}
+
+.entity-card--unnamed .entity-name {
+    color: var(--text-muted);
+    letter-spacing: 0.2em;
+}
+
+.entity-role {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.entity-pullquote {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--ember-warm);
+    margin: 0.5rem 0 0;
+    line-height: 1.5;
+    border-left: 2px solid var(--ember-dim);
+    padding-left: 0.75rem;
+}
+
+.entity-reclamation-link {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-top: auto;
+    padding-top: 0.75rem;
+    transition: color 0.2s;
+}
+
+.entity-reclamation-link:hover {
+    color: var(--ember-warm);
+}
+
+.entity-remainder {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    letter-spacing: 0.3em;
+    margin-top: auto;
+    padding-top: 0.75rem;
+}
+
+.entities-footer {
+    margin-top: 3rem;
+    padding: 2rem;
+    border: 1px solid var(--ember-dim);
+    text-align: center;
+}
+
+.entities-footer p {
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .entities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .entities-grid {
+        grid-template-columns: 1fr;
+    }
+}
