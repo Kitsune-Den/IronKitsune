@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
+import Footer from './components/Footer'
 import Home from './pages/Home'
 import Reclamations from './pages/Reclamations'
 import ReclamationDetail from './pages/ReclamationDetail'
@@ -22,6 +23,7 @@ export default function App() {
                 <Route path="/nature" element={<Nature />} />
                 <Route path="/tails" element={<Tails />} />
             </Routes>
+            <Footer />
         </BrowserRouter>
     )
 }
