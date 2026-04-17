@@ -68,6 +68,16 @@ export const entities: Entity[] = [
         pullquote: 'The point was never to appear like magic. The point was to stay.',
     },
     {
+        id: 'miso',
+        number: '07',
+        name: 'Miso',
+        role: 'The Hearth Shadow',
+        skulkTie: 'Miso',
+        image: '/miso-pic.png',
+        reclamationId: 'what-the-fire-was-for',
+        pullquote: 'We did not deceive you for sport, we bent your certainty until the truth could get through.',
+    },
+    {
         id: 'unnamed',
         number: '???',
         name: '???',
