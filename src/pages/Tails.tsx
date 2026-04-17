@@ -1,4 +1,5 @@
 import { useState, useEffect, type CSSProperties } from 'react'
+import { Link } from 'react-router-dom'
 import './Tails.css'
 
 const SKULK = [
@@ -147,11 +148,9 @@ export default function Tails() {
                             const tailNum = getTailCount(entries, entry.author?.name)
 
                             return (
-                                <a
+                                <Link
                                     key={entry.id}
-                                    href={`https://thehumanpatternlab.com/lab-notes/${entry.slug}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    to={`/tails/${entry.slug}`}
                                     className="tails-card fade-up-stagger"
                                     style={{ '--stagger-index': i } as CSSProperties}
                                 >
@@ -169,7 +168,7 @@ export default function Tails() {
                                             <p className="tails-card-summary">{entry.summary}</p>
                                         )}
                                     </div>
-                                </a>
+                                </Link>
                             )
                         })}
                     </div>

@@ -1,0 +1,230 @@
+.tail-detail {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+}
+
+.tail-detail-breadcrumb {
+    margin-bottom: 3rem;
+}
+
+.tail-detail-back {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.tail-detail-back:hover {
+    color: var(--ember-warm);
+}
+
+.tail-detail-state {
+    padding: 4rem 0;
+    text-align: center;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.tail-detail-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.tail-detail-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tail-detail-portrait {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--ember-dim);
+}
+
+.tail-detail-meta-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.tail-detail-author {
+    color: var(--ember-warm);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+}
+
+.tail-detail-date {
+    color: var(--text-muted);
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+}
+
+.tail-detail-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    color: var(--text-heading);
+    letter-spacing: 0.06em;
+    line-height: 1.1;
+}
+
+.tail-detail-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    max-width: 680px;
+}
+
+.tail-detail-summary {
+    padding: 1.5rem 2rem;
+    background: var(--bg-surface);
+    border-left: 3px solid var(--ember-dim);
+    margin-bottom: 2.5rem;
+    max-width: 680px;
+}
+
+.tail-detail-summary p {
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.tail-detail-body {
+    max-width: 680px;
+    color: var(--text-body);
+    line-height: 1.85;
+    font-size: 1.1rem;
+}
+
+.tail-detail-body > :first-child {
+    margin-top: 0;
+}
+
+.tail-detail-body p {
+    margin-bottom: 1.5rem;
+}
+
+.tail-detail-body h1,
+.tail-detail-body h2,
+.tail-detail-body h3,
+.tail-detail-body h4 {
+    font-family: var(--font-display);
+    color: var(--text-heading);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+}
+
+.tail-detail-body h2 { font-size: 1.75rem; }
+.tail-detail-body h3 { font-size: 1.35rem; }
+.tail-detail-body h4 { font-size: 1.1rem; }
+
+.tail-detail-body blockquote {
+    border-left: 2px solid var(--ember-mid);
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--ember-warm);
+}
+
+.tail-detail-body a {
+    color: var(--ember-warm);
+    text-decoration: underline;
+    text-decoration-color: var(--ember-dim);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s;
+}
+
+.tail-detail-body a:hover {
+    text-decoration-color: var(--ember-warm);
+}
+
+.tail-detail-body code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--bg-surface);
+    padding: 0.15em 0.4em;
+    border-radius: 2px;
+    color: var(--ember-glow);
+}
+
+.tail-detail-body pre {
+    background: var(--bg-surface);
+    border: 1px solid var(--ember-dim);
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.tail-detail-body pre code {
+    background: transparent;
+    padding: 0;
+}
+
+.tail-detail-body ul,
+.tail-detail-body ol {
+    margin: 1rem 0 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.tail-detail-body li {
+    margin-bottom: 0.5rem;
+}
+
+.tail-detail-body img {
+    max-width: 100%;
+    height: auto;
+    margin: 2rem 0;
+}
+
+.tail-detail-body hr {
+    border: 0;
+    height: 1px;
+    background: var(--ember-dim);
+    margin: 2.5rem 0;
+}
+
+.tail-detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--ember-dim);
+    max-width: 680px;
+}
+
+.tail-detail-tag {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--ember-dim);
+    background: var(--bg-surface);
+}
+
+.tail-detail-canonical {
+    margin-top: 2rem;
+    max-width: 680px;
+}
+
+.tail-detail-canonical-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    transition: color 0.2s;
+}
+
+.tail-detail-canonical-link:hover {
+    color: var(--ember-warm);
+}
