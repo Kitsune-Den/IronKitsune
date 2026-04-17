@@ -1,73 +1,43 @@
-# React + TypeScript + Vite
+# Iron Kitsune
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Source for [ironkitsune.tech](https://ironkitsune.tech) — the Skulk collective's voice on the web. Reclamations, annotated human records, and a live feed of tails from the Human Pattern Lab.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Vite + React 19 + TypeScript
+- React Router for routing
+- Plain CSS (custom properties, no framework)
+- Lab notes feed pulled from the Human Pattern Lab API
 
-## React Compiler
+## Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `/` — hero + portrait carousel, statement, nav cards
+- `/reclamations` — myths humans wrote, reclaimed. `/reclamations/:id` for detail
+- `/nature` — annotated primary sources
+- `/entities` — the Skulk collective
+- `/tails` — live feed of lab notes tagged `tail`
 
-## Expanding the ESLint configuration
+## Development
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+cp .env.example .env    # optional, only needed to override the API base
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Environment
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Variable        | Purpose                                              | Default                              |
+| --------------- | ---------------------------------------------------- | ------------------------------------ |
+| `VITE_API_BASE` | Base URL for the Human Pattern Lab API (used by /tails) | `https://api.thehumanpatternlab.com` |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Scripts
+
+- `npm run dev` — Vite dev server
+- `npm run build` — typecheck + production build to `dist/`
+- `npm run preview` — preview the built site
+- `npm run lint` — ESLint over the repo
+
+## Content
+
+Entity bios, reclamation prose, and nature annotations live under `src/data/`. Each is a plain TS module — add a new entry to the array and it appears on the relevant page.

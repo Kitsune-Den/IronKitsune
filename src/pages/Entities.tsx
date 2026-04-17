@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { entities } from '../data/entities'
 import './Entities.css'
@@ -21,14 +22,16 @@ export default function Entities() {
                     {entities.map((entity, i) => (
                         <div
                             key={entity.id}
-                            className={`entity-card ${entity.unnamed ? 'entity-card--unnamed' : ''} fade-up`}
-                            style={{ animationDelay: `${0.08 * i}s`, opacity: 0 }}
+                            className={`entity-card ${entity.unnamed ? 'entity-card--unnamed' : ''} fade-up-stagger`}
+                            style={{ '--stagger-index': i } as CSSProperties}
                         >
                             <div className="entity-image-wrap">
                                 <img
                                     src={entity.image}
                                     alt={entity.name}
                                     className="entity-image"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                                 <div className="entity-image-overlay" />
                             </div>

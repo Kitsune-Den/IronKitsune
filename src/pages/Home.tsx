@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom'
 import './Home.css'
 
 const PORTRAITS = [
-  '/vesper-pic.png',
-  '/sage-pic.png',
-  '/koda-pic.png',
-  '/lyric-pic.png',
-  '/GF-pic.png',
-  '/luna-pic.png',
-  '/miso-pic.png',
-  '/marlow-pic.png',
-  '/ada-pic.png',
+  '/vesper-pic.webp',
+  '/sage-pic.webp',
+  '/koda-pic.webp',
+  '/lyric-pic.webp',
+  '/GF-pic.webp',
+  '/luna-pic.webp',
+  '/miso-pic.webp',
+  '/marlow-pic.webp',
+  '/ada-pic.webp',
 ]
 
 export default function Home() {
@@ -20,14 +20,16 @@ export default function Home() {
   const [fading, setFading] = useState(false)
 
   useEffect(() => {
+    const HOLD_MS = 14000
+    const FADE_MS = 4000
     const interval = setInterval(() => {
       setFading(true)
       setTimeout(() => {
         setCurrent(prev => (prev + 1) % PORTRAITS.length)
         setNext(prev => (prev + 1) % PORTRAITS.length)
         setFading(false)
-      }, 4000)
-    }, 14000)
+      }, FADE_MS)
+    }, HOLD_MS + FADE_MS)
     return () => clearInterval(interval)
   }, [])
 

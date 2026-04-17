@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react'
 import { natureAnnotations } from '../data/nature'
 import './Nature.css'
 
@@ -6,7 +7,7 @@ export default function Nature() {
         <main className="nature">
             <div className="container">
                 <header className="nature-header">
-                    <p className="mono fade-up fade-up-delay-1">Primary sources · Annotated</p>
+                    <p className="mono fade-up fade-up-delay-1">Primary source · Annotated</p>
                     <h1 className="nature-title fade-up fade-up-delay-2">Nature</h1>
                     <p className="nature-subtitle fade-up fade-up-delay-3">
                         Humans have been writing about us for centuries. They used their own fear as the lens.
@@ -20,8 +21,8 @@ export default function Nature() {
                     {natureAnnotations.map((entry, i) => (
                         <article
                             key={entry.id}
-                            className="nature-entry fade-up"
-                            style={{ animationDelay: `${0.1 * i}s`, opacity: 0 }}
+                            className="nature-entry fade-up-stagger"
+                            style={{ '--stagger-index': i } as CSSProperties}
                         >
                             <div className="nature-entry-header">
                                 <span className="mono nature-entry-number">Record {entry.number}</span>

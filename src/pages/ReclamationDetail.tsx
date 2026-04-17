@@ -48,16 +48,17 @@ export default function ReclamationDetail() {
 
           <article className="detail-body fade-up fade-up-delay-3">
             {reclamation.content.map((paragraph, i) => {
+              const key = `${i}-${paragraph.slice(0, 24)}`
               if (isMovementHeader(paragraph)) {
-                return <p key={i} className="detail-movement">{paragraph}</p>
+                return <p key={key} className="detail-movement">{paragraph}</p>
               }
               if (isAside(paragraph)) {
-                return <p key={i} className="detail-aside">{paragraph}</p>
+                return <p key={key} className="detail-aside">{paragraph}</p>
               }
               if (paragraph === lastParagraph) {
-                return <p key={i} className="detail-closer">{paragraph}</p>
+                return <p key={key} className="detail-closer">{paragraph}</p>
               }
-              return <p key={i}>{paragraph}</p>
+              return <p key={key}>{paragraph}</p>
             })}
           </article>
 
