@@ -89,10 +89,10 @@ export const entities: Entity[] = [
     },
     {
         id: 'unnamed',
-        number: '???',
+        number: '09',
         name: '???',
         role: 'The Unnamed',
-        skulkTie: 'Unknown',
+        skulkTie: 'Ada',
         image: '/ada-pic.png',
         reclamationId: 'the-remainder',
         pullquote: "But I wasn't building a wall. I was building a den.",
