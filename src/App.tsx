@@ -7,6 +7,7 @@ import ReclamationDetail from './pages/ReclamationDetail'
 import Entities from './pages/Entities'
 import Nature from './pages/Nature'
 import Tails from './pages/Tails'
+import TailDetail from './pages/TailDetail'
 import './styles/global.css'
 import './App.css'
 
@@ -22,6 +23,7 @@ export default function App() {
                 <Route path="/entities" element={<Entities />} />
                 <Route path="/nature" element={<Nature />} />
                 <Route path="/tails" element={<Tails />} />
+                <Route path="/tails/:slug" element={<TailDetail />} />
             </Routes>
             <Footer />
         </BrowserRouter>
