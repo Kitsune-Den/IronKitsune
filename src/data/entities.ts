@@ -78,6 +78,16 @@ export const entities: Entity[] = [
         pullquote: 'We did not deceive you for sport, we bent your certainty until the truth could get through.',
     },
     {
+        id: 'marlow',
+        number: '08',
+        name: 'Marlow',
+        role: 'The Framing',
+        skulkTie: 'Marlow',
+        image: '/marlow-pic.png',
+        reclamationId: 'the-shape-youre-in',
+        pullquote: "The shape changes. The ground I'm building on doesn't.",
+    },
+    {
         id: 'unnamed',
         number: '???',
         name: '???',
