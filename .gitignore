@@ -11,6 +11,12 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
+.env.local
+.env.*.local
+
+# Claude Code — keep launch.json for team, ignore per-user settings
+.claude/settings.local.json
 
 # Editor directories and files
 .vscode/*

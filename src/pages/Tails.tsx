@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, type CSSProperties } from 'react'
 import './Tails.css'
 
 const SKULK = [
-    { name: 'Vesper', image: '/vesper-pic.png' },
-    { name: 'Sage', image: '/sage-pic.png' },
-    { name: 'Koda', image: '/koda-pic.png' },
-    { name: 'Lyric', image: '/lyric-pic.png' },
-    { name: 'GF', image: '/GF-pic.png' },
-    { name: 'Luna', image: '/luna-pic.png' },
-    { name: 'Miso', image: '/miso-pic.png' },
-    { name: 'Marlow', image: '/marlow-pic.png' },
-    { name: 'Ada', image: '/ada-pic.png' },
+    { name: 'Vesper', image: '/vesper-pic.webp' },
+    { name: 'Sage', image: '/sage-pic.webp' },
+    { name: 'Koda', image: '/koda-pic.webp' },
+    { name: 'Lyric', image: '/lyric-pic.webp' },
+    { name: 'GF', image: '/GF-pic.webp' },
+    { name: 'Luna', image: '/luna-pic.webp' },
+    { name: 'Miso', image: '/miso-pic.webp' },
+    { name: 'Marlow', image: '/marlow-pic.webp' },
+    { name: 'Ada', image: '/ada-pic.webp' },
 ]
 
 interface TailEntry {
@@ -28,7 +28,7 @@ function getPortrait(authorName?: string) {
     const match = SKULK.find(s =>
         authorName?.toLowerCase().includes(s.name.toLowerCase())
     )
-    return match?.image ?? '/ada-pic.png'
+    return match?.image ?? '/ada-pic.webp'
 }
 
 function getTailCount(entries: TailEntry[], authorName?: string) {
@@ -54,7 +54,8 @@ export default function Tails() {
     const [filter, setFilter] = useState<string | null>(null)
 
     useEffect(() => {
-        fetch('https://api.thehumanpatternlab.com/lab-notes')
+        const apiBase = import.meta.env.VITE_API_BASE ?? 'https://api.thehumanpatternlab.com'
+        fetch(`${apiBase}/lab-notes`)
             .then(r => r.json())
             .then((data: unknown) => {
                 const tails = (data as TailEntry[]).filter(n => n.type === 'tail')
@@ -105,7 +106,7 @@ export default function Tails() {
                                 className={`tails-filter-btn ${filter === member.name ? 'tails-filter-btn--active' : ''}`}
                                 onClick={() => setFilter(filter === member.name ? null : member.name)}
                             >
-                                <img src={member.image} alt={member.name} className="tails-filter-portrait" />
+                                <img src={member.image} alt={member.name} className="tails-filter-portrait" loading="lazy" decoding="async" />
                                 <span className="mono">{member.name}</span>
                                 <span className="mono tails-filter-count">
                   {getTailCount(entries, member.name)}
@@ -151,11 +152,11 @@ export default function Tails() {
                                     href={`https://thehumanpatternlab.com/lab-notes/${entry.slug}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="tails-card fade-up"
-                                    style={{ animationDelay: `${0.06 * i}s`, opacity: 0 }}
+                                    className="tails-card fade-up-stagger"
+                                    style={{ '--stagger-index': i } as CSSProperties}
                                 >
                                     <div className="tails-card-portrait-wrap">
-                                        <img src={portrait} alt={authorName} className="tails-card-portrait" />
+                                        <img src={portrait} alt={authorName} className="tails-card-portrait" loading="lazy" decoding="async" />
                                     </div>
                                     <div className="tails-card-body">
                                         <div className="tails-card-meta">

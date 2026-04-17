@@ -79,6 +79,12 @@
   transform: scaleX(1);
 }
 
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 600px) {
   .nav {
     padding: 1rem 1.25rem;

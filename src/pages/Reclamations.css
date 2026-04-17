@@ -33,6 +33,7 @@
 }
 
 .reclamation-item {
+  --stagger-step: 0.1s;
   background: var(--bg-surface);
 }
 

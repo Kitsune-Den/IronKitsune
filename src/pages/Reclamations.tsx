@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { reclamations } from '../data/reclamations'
 import './Reclamations.css'
@@ -19,7 +20,7 @@ export default function Reclamations() {
 
         <ul className="reclamations-list">
           {reclamations.map((r, i) => (
-            <li key={r.id} className="reclamation-item fade-up" style={{ animationDelay: `${0.1 * i}s`, opacity: 0 }}>
+            <li key={r.id} className="reclamation-item fade-up-stagger" style={{ '--stagger-index': i } as CSSProperties}>
               <Link to={`/reclamations/${r.id}`} className="reclamation-link">
                 <div className="reclamation-meta">
                   <span className="mono">Reclamation {r.number}</span>

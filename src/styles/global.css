@@ -145,3 +145,11 @@ p:last-child {
 .fade-up-delay-2 { animation-delay: 0.2s; opacity: 0; }
 .fade-up-delay-3 { animation-delay: 0.35s; opacity: 0; }
 .fade-up-delay-4 { animation-delay: 0.5s; opacity: 0; }
+
+/* Staggered entrance animation driven by --stagger-index (set inline per item)
+   and --stagger-step (set in the component's CSS). */
+.fade-up-stagger {
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: calc(var(--stagger-index, 0) * var(--stagger-step, 0.08s));
+  opacity: 0;
+}
