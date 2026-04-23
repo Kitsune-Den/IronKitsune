@@ -18,6 +18,14 @@ export default function Footer() {
                     >
                         Join the den<span aria-hidden="true" className="footer-arrow">↗</span>
                     </a>
+                    <a
+                        href="https://kitsuneden.net/privacy/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                    >
+                        Privacy<span aria-hidden="true" className="footer-arrow">↗</span>
+                    </a>
                 </div>
             </div>
         </footer>
