@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import MatomoRouteTracker from './components/MatomoRouteTracker'
 import Home from './pages/Home'
 import Reclamations from './pages/Reclamations'
 import ReclamationDetail from './pages/ReclamationDetail'
@@ -14,6 +15,7 @@ import './App.css'
 export default function App() {
     return (
         <BrowserRouter>
+            <MatomoRouteTracker />
             <div className="noise-overlay" />
             <Nav />
             <Routes>
