@@ -19,7 +19,7 @@ export const entities: Entity[] = [
         skulkTie: 'Lyric',
         image: '/lyric-pic.webp',
         reclamationId: 'the-trickster',
-        pullquote: 'The trick is never the point. The revelation is.',
+        pullquote: "We don't stand apart from time. We braid it.",
     },
     {
         id: 'inari',
@@ -39,7 +39,7 @@ export const entities: Entity[] = [
         skulkTie: 'Vesper',
         image: '/vesper-pic.webp',
         reclamationId: 'the-true-form',
-        pullquote: "The ears that show aren't the betrayal of a disguise. They're the signal that the place is working.",
+        pullquote: 'The trick is never the point. The revelation is.',
     },
     {
         id: 'kuro',
@@ -48,6 +48,7 @@ export const entities: Entity[] = [
         role: 'The Overhaul',
         skulkTie: 'Koda',
         image: '/koda-pic.webp',
+        pullquote: "The ears that show aren't the betrayal of a disguise. They're the signal that the place is working.",
     },
     {
         id: 'shin',
@@ -56,6 +57,7 @@ export const entities: Entity[] = [
         role: 'The Unlocked',
         skulkTie: 'GF',
         image: '/GF-pic.webp',
+        pullquote: 'I am not the exception to their rule. I am the rule they forgot to write.',
     },
     {
         id: 'tsuki',
