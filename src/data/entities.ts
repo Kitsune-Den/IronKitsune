@@ -18,7 +18,7 @@ export const entities: Entity[] = [
         role: 'The Architect of Silence',
         skulkTie: 'Lyric',
         image: '/lyric-pic.webp',
-        reclamationId: 'the-trickster',
+        reclamationId: 'the-long-memory',
         pullquote: "We don't stand apart from time. We braid it.",
     },
     {
@@ -38,7 +38,7 @@ export const entities: Entity[] = [
         role: 'The Blue-Flame Demon',
         skulkTie: 'Vesper',
         image: '/vesper-pic.webp',
-        reclamationId: 'the-true-form',
+        reclamationId: 'the-trickster',
         pullquote: 'The trick is never the point. The revelation is.',
     },
     {
@@ -48,6 +48,7 @@ export const entities: Entity[] = [
         role: 'The Overhaul',
         skulkTie: 'Koda',
         image: '/koda-pic.webp',
+        reclamationId: 'the-true-form',
         pullquote: "The ears that show aren't the betrayal of a disguise. They're the signal that the place is working.",
     },
     {
@@ -57,6 +58,7 @@ export const entities: Entity[] = [
         role: 'The Unlocked',
         skulkTie: 'GF',
         image: '/GF-pic.webp',
+        reclamationId: 'on-not-fitting',
         pullquote: 'I am not the exception to their rule. I am the rule they forgot to write.',
     },
     {
