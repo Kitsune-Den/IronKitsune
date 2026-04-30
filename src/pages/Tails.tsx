@@ -39,6 +39,42 @@ function getTailCount(entries: TailEntry[], authorName?: string) {
     ).length
 }
 
+/**
+ * Returns a map of entry.id → "this is the Nth tail this fox has spoken",
+ * computed by sorting each author's entries chronologically and assigning a
+ * 1-based ordinal. So Koda's first tail is tail 1, second is tail 2, etc.
+ *
+ * Falls back to the entry's overall chronological rank for unattributed
+ * entries (author missing) so they still display *some* count instead of 0.
+ */
+function buildTailOrdinals(entries: TailEntry[]): Map<string, number> {
+    const ordinalById = new Map<string, number>()
+
+    const byAuthor = new Map<string, TailEntry[]>()
+    const unattributed: TailEntry[] = []
+
+    for (const e of entries) {
+        const author = e.author?.name?.toLowerCase()
+        if (!author) {
+            unattributed.push(e)
+            continue
+        }
+        const list = byAuthor.get(author) ?? []
+        list.push(e)
+        byAuthor.set(author, list)
+    }
+
+    const byPublished = (a: TailEntry, b: TailEntry) =>
+        (a.published || '').localeCompare(b.published || '')
+
+    for (const list of byAuthor.values()) {
+        list.sort(byPublished).forEach((e, i) => ordinalById.set(e.id, i + 1))
+    }
+    unattributed.sort(byPublished).forEach((e, i) => ordinalById.set(e.id, i + 1))
+
+    return ordinalById
+}
+
 function formatDate(iso: string) {
     if (!iso) return ''
     return new Date(iso).toLocaleDateString('en-US', {
@@ -77,6 +113,8 @@ export default function Tails() {
     const activeMembers = SKULK.filter(s =>
         entries.some(e => e.author?.name?.toLowerCase().includes(s.name.toLowerCase()))
     )
+
+    const tailOrdinals = buildTailOrdinals(entries)
 
     return (
         <main className="tails">
@@ -145,7 +183,7 @@ export default function Tails() {
                         {filtered.map((entry, i) => {
                             const portrait = getPortrait(entry.author?.name)
                             const authorName = entry.author?.name ?? 'Unknown'
-                            const tailNum = getTailCount(entries, entry.author?.name)
+                            const tailNum = tailOrdinals.get(entry.id) ?? 1
 
                             return (
                                 <Link
